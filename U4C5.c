@@ -69,6 +69,10 @@ int main() {
 
             // Confirma se o botão ainda está pressionado e se todos os LEDs estão desligados
             if (gpio_get(BUTTON) == 0 && gpio_get(LED_RED) == 0 && gpio_get(LED_BLUE) == 0 && gpio_get(LED_GREEN) == 0) {
+                gpio_put(LED_RED, true);  // Liga o LED vermelho
+                gpio_put(LED_BLUE, true); // Liga o LED azul
+                gpio_put(LED_GREEN, true);// Liga o LED verde
+                
                 gpio_put(LED_BLUE, true); // Liga o LED azul
                 led_active = true; // Marca os LEDs como ativos
 
